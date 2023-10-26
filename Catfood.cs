@@ -14,7 +14,7 @@
 
         public override string ToString()
         {
-            return base.ToString() + $"Amount: {WeightPounds}\nKitten Food?: {KittenFood}\n";
+            return base.ToString() + $"\nAmount: {WeightPounds}\nKitten Food?: {KittenFood}\n";
         }
     }
 }

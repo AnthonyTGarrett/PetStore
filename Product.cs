@@ -25,7 +25,7 @@
 
         public override string ToString()
         {
-            return $"{Name} : ${Price} \nQty: {Quantity}\nDescription: {Description}\n";
+            return $"\n{Name} : ${Price} \nQty: {Quantity}\nDescription: {Description}\n";
         }
     }
 }

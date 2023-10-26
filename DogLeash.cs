@@ -19,7 +19,7 @@
 
         public override string ToString()
         {
-            return base.ToString() + $"Length: {LengthInches}\nMaterial: {Material}\n";
+            return base.ToString() + $"\nLength: {LengthInches}\nMaterial: {Material}\n";
         }
     }
 }

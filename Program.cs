@@ -11,16 +11,16 @@ while (userInput.ToLower() != "exit")
 {
     if (int.Parse(userInput) == 1)
     {
-        Console.WriteLine("What product would you like to add('dogleash' or 'catfood'? ");
+        Console.WriteLine("\nWhat product would you like to add('dog leash' or 'cat food')? ");
         string userProduct = Console.ReadLine();
 
-        if (userProduct.ToLower() == "dogleash")
+        if (userProduct.ToLower() == "dog leash")
         {
             DogLeash dogLeash = new DogLeash();
-            Console.WriteLine("How long of a leash do you need? ");
+            Console.WriteLine("\nHow long of a leash do you need? ");
             dogLeash.LengthInches = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("What material should the leash be made of? ");
+            Console.WriteLine("\nWhat material should the leash be made of? ");
             dogLeash.Material = Console.ReadLine();
 
             // Console.WriteLine(dogLeash);
@@ -29,13 +29,13 @@ while (userInput.ToLower() != "exit")
 
         }
 
-        if (userProduct.ToLower() == "catfood")
+        if (userProduct.ToLower() == "cat food")
         {
             Catfood catfood = new Catfood();
-            Console.WriteLine("How many pounds of cat food do you need? ");
+            Console.WriteLine("\nHow many pounds of cat food do you need? ");
             catfood.WeightPounds = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Is the food for a kitten(yes/no)? ");
+            Console.WriteLine("\nIs the food for a kitten(yes/no)? ");
             if (Console.ReadLine().ToLower() == "yes")
             {
                 catfood.KittenFood = true;
@@ -69,8 +69,10 @@ while (userInput.ToLower() != "exit")
 
     }
 
-    Console.WriteLine("Press 1 to add a product");
+    Console.WriteLine("\nPress 1 to add a product");
     Console.WriteLine("Press 2 to Print shopping List.");
     Console.WriteLine("Type 'exit' to quit");
     userInput = Console.ReadLine();
+
+    Console.WriteLine();
 }

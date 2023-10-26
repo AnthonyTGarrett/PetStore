@@ -18,7 +18,7 @@
                 {
                     Console.Write("Product: " + product.Name + " Quantity: " + product.Quantity);
 
-                    Console.WriteLine(" Price: " + product.Price);
+                    Console.WriteLine(" Price: " + product.Price + "\n");
                 }
             }
             else { Console.WriteLine("Shopping List is Empty"); }
