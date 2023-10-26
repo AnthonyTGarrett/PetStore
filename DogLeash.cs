@@ -16,5 +16,10 @@
             LengthInches = lengthInches;
             Material = material;
         }
+
+        public override string ToString()
+        {
+            return base.ToString() + $"Length: {LengthInches}\nMaterial: {Material}\n";
+        }
     }
 }

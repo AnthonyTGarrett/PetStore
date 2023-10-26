@@ -11,11 +11,18 @@
 
         public void PrintShoppingList()
         {
-            foreach (Product product in _shoppingList)
+
+            if (_shoppingList.Count > 0)
             {
-                Console.WriteLine(product.Name);
-                Console.WriteLine(product.Description);
+                foreach (Product product in _shoppingList)
+                {
+                    Console.Write("Product: " + product.Name + " Quantity: " + product.Quantity);
+
+                    Console.WriteLine(" Price: " + product.Price);
+                }
             }
+            else { Console.WriteLine("Shopping List is Empty"); }
+
         }
     }
 }

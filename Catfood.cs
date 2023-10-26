@@ -11,5 +11,10 @@
             KittenFood = false;
 
         }
+
+        public override string ToString()
+        {
+            return base.ToString() + $"Amount: {WeightPounds}\nKitten Food?: {KittenFood}\n";
+        }
     }
 }

@@ -23,6 +23,8 @@ while (userInput.ToLower() != "exit")
             Console.WriteLine("What material should the leash be made of? ");
             dogLeash.Material = Console.ReadLine();
 
+            // Console.WriteLine(dogLeash);
+            // Console.WriteLine(JsonSerializer.Serialize(dogLeash));
             shoppingList.Add(dogLeash);
 
         }
@@ -37,16 +39,25 @@ while (userInput.ToLower() != "exit")
             if (Console.ReadLine().ToLower() == "yes")
             {
                 catfood.KittenFood = true;
+                // Console.WriteLine(catfood);
+                // Console.WriteLine(JsonSerializer.Serialize(catfood));
                 shoppingList.Add(catfood);
 
             }
             else
             {
                 catfood.KittenFood = false;
+                // Console.WriteLine(catfood);
+                // Console.WriteLine(JsonSerializer.Serialize(catfood));
                 shoppingList.Add(catfood);
             }
         }
     }
+    else if (int.Parse(userInput) == 2)
+    {
+        shoppingList.PrintShoppingList();
+    }
+
     else if (userInput.ToLower() == "exit")
     {
         Console.WriteLine("Goodbye");
@@ -59,6 +70,7 @@ while (userInput.ToLower() != "exit")
     }
 
     Console.WriteLine("Press 1 to add a product");
+    Console.WriteLine("Press 2 to Print shopping List.");
     Console.WriteLine("Type 'exit' to quit");
     userInput = Console.ReadLine();
 }
