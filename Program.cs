@@ -1,6 +1,8 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using PetStore;
 
+ShoppingList shoppingList = new ShoppingList();
+
 Console.WriteLine("Press 1 to add a product");
 Console.WriteLine("Type 'exit' to quit");
 string userInput = Console.ReadLine();
@@ -21,6 +23,8 @@ while (userInput.ToLower() != "exit")
             Console.WriteLine("What material should the leash be made of? ");
             dogLeash.Material = Console.ReadLine();
 
+            shoppingList.Add(dogLeash);
+
         }
 
         if (userProduct.ToLower() == "catfood")
@@ -29,8 +33,18 @@ while (userInput.ToLower() != "exit")
             Console.WriteLine("How many pounds of cat food do you need? ");
             catfood.WeightPounds = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Is the food for a kitten? ");
-            catfood.KittenFood = bool.Parse(Console.ReadLine());
+            Console.WriteLine("Is the food for a kitten(yes/no)? ");
+            if (Console.ReadLine().ToLower() == "yes")
+            {
+                catfood.KittenFood = true;
+                shoppingList.Add(catfood);
+
+            }
+            else
+            {
+                catfood.KittenFood = false;
+                shoppingList.Add(catfood);
+            }
         }
     }
     else if (userInput.ToLower() == "exit")
