@@ -3,7 +3,7 @@ using PetStore;
 using System.Security.Cryptography;
 
 
-var ProductLogic = new ProductLogic();
+var productLogic = new ProductLogic();
 
 Console.WriteLine("Press 1 to add a product");
 Console.WriteLine("Type 'exit' to quit");
@@ -38,7 +38,7 @@ while (userInput.ToLower() != "exit")
             Console.WriteLine("\nWhat material should the leash be made of? ");
             dogLeash.Material = Console.ReadLine();
 
-            ProductLogic.AddProduct(dogLeash);
+            productLogic.AddProduct(dogLeash);
             Console.WriteLine("Your product was added to the list.");
 
         }
@@ -54,7 +54,7 @@ while (userInput.ToLower() != "exit")
             {
                 catfood.KittenFood = true;
 
-                ProductLogic.AddProduct(catfood);
+                productLogic.AddProduct(catfood);
                 Console.WriteLine("Your product was added to the list.");
 
             }
@@ -62,7 +62,7 @@ while (userInput.ToLower() != "exit")
             {
                 catfood.KittenFood = false;
 
-               ProductLogic.AddProduct(catfood);
+               productLogic.AddProduct(catfood);
                 Console.WriteLine("Your product was added to the list.");
             }
         }
@@ -70,7 +70,7 @@ while (userInput.ToLower() != "exit")
     else if (int.Parse(userInput) == 2)
     {
         Console.WriteLine("What Dog Leash would you like to view?");
-        ProductLogic.GetDogLeashByName(Console.ReadLine());
+        Console.WriteLine(productLogic.GetDogLeashByName(Console.ReadLine()));
     }
 
     else if (userInput.ToLower() == "exit")

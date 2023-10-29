@@ -15,6 +15,8 @@ namespace PetStore
         public ProductLogic()
         {
             _products = new List<Product>();
+            _dogLeash = new Dictionary<string, DogLeash>();
+            _catfood = new Dictionary<string, Catfood>();
         }
 
         public void AddProduct(Product product)
