@@ -2,6 +2,7 @@
 using PetStore;
 
 ShoppingList shoppingList = new ShoppingList();
+var ProductLogic = new ProductLogic();
 
 Console.WriteLine("Press 1 to add a product");
 Console.WriteLine("Type 'exit' to quit");
