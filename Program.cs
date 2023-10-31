@@ -8,6 +8,7 @@ Console.WriteLine("Press 1 to add a product");
 Console.WriteLine("Type 'exit' to quit");
 string userInput = Console.ReadLine();
 
+Found:
 while (userInput.ToLower() != "exit")
 {
     if (int.Parse(userInput) == 1)
@@ -88,7 +89,16 @@ while (userInput.ToLower() != "exit")
     else if (int.Parse(userInput) == 3)
     {
         Console.WriteLine("What Cat Food would you like to view?");
-        Console.WriteLine(productLogic.GetCatFoodByName(Console.ReadLine()));
+        try
+        {
+            Console.WriteLine(productLogic.GetCatFoodByName(Console.ReadLine()));
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("That product does not exist.");
+
+        }
+
     }
 
     else if (userInput.ToLower() == "exit")
