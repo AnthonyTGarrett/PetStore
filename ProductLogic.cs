@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PetStore
+﻿namespace PetStore
 {
     class ProductLogic
     {
@@ -33,14 +27,21 @@ namespace PetStore
 
         }
 
-        public DogLeash GetDogLeashByName (string name)
+        public DogLeash GetDogLeashByName(string name)
         {
             return _dogLeash[name];
+        }
+
+        public Catfood GetCatFoodByName(string name)
+        {
+            return _catfood[name];
         }
 
         public List<Product> GetAllProducts()
         {
             return _products;
         }
+
+
     }
 }

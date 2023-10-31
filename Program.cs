@@ -1,6 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using PetStore;
-using System.Security.Cryptography;
 
 
 var productLogic = new ProductLogic();
@@ -46,6 +45,19 @@ while (userInput.ToLower() != "exit")
         if (userProduct.ToLower() == "cat food")
         {
             Catfood catfood = new Catfood();
+
+            Console.WriteLine("\nWhat brand of Cat Food(name)? ");
+            catfood.Name = Console.ReadLine();
+
+            Console.WriteLine("\nWhat was the price of the cat food ");
+            catfood.Price = Decimal.Parse(Console.ReadLine());
+
+            Console.WriteLine("\nHow many do you need? ");
+            catfood.Quantity = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("\nDescribe the Cat Food: ");
+            catfood.Description = Console.ReadLine();
+
             Console.WriteLine("\nHow many pounds of cat food do you need? ");
             catfood.WeightPounds = int.Parse(Console.ReadLine());
 
@@ -62,7 +74,7 @@ while (userInput.ToLower() != "exit")
             {
                 catfood.KittenFood = false;
 
-               productLogic.AddProduct(catfood);
+                productLogic.AddProduct(catfood);
                 Console.WriteLine("Your product was added to the list.");
             }
         }
@@ -71,6 +83,12 @@ while (userInput.ToLower() != "exit")
     {
         Console.WriteLine("What Dog Leash would you like to view?");
         Console.WriteLine(productLogic.GetDogLeashByName(Console.ReadLine()));
+    }
+
+    else if (int.Parse(userInput) == 3)
+    {
+        Console.WriteLine("What Cat Food would you like to view?");
+        Console.WriteLine(productLogic.GetCatFoodByName(Console.ReadLine());
     }
 
     else if (userInput.ToLower() == "exit")
@@ -85,7 +103,8 @@ while (userInput.ToLower() != "exit")
     }
 
     Console.WriteLine("\nPress 1 to add a product");
-    Console.WriteLine("Press 2 to Get you dog leash by name.");
+    Console.WriteLine("Press 2 to Get your dog leash by name.");
+    Console.WriteLine("Press 3 to Get your cat food by name.");
     Console.WriteLine("Type 'exit' to quit");
     userInput = Console.ReadLine();
 
