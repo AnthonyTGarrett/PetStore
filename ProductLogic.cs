@@ -42,6 +42,25 @@
             return _products;
         }
 
+        public bool hasLeash()
+        {
+            return _dogLeash.Count == 0 ? false : true;
+        }
+
+        public bool hasLeash(string name)
+        {
+            return _dogLeash.ContainsKey(name);
+        }
+
+        public bool hasFood(string name)
+        {
+            return _catfood.ContainsKey(name);
+        }
+
+        public bool hasFood()
+        {
+            return _catfood.Count == 0 ? false : true;
+        }
 
     }
 }

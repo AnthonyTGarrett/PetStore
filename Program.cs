@@ -3,7 +3,7 @@ using PetStore;
 
 
 var productLogic = new ProductLogic();
-
+Console.WriteLine("Welcome to Tony's pet supplies!");
 Console.WriteLine("Press 1 to add a product");
 Console.WriteLine("Type 'exit' to quit");
 string userInput = Console.ReadLine();
@@ -88,7 +88,7 @@ while (userInput.ToLower() != "exit")
     else if (int.Parse(userInput) == 3)
     {
         Console.WriteLine("What Cat Food would you like to view?");
-        Console.WriteLine(productLogic.GetCatFoodByName(Console.ReadLine());
+        Console.WriteLine(productLogic.GetCatFoodByName(Console.ReadLine()));
     }
 
     else if (userInput.ToLower() == "exit")
@@ -103,8 +103,17 @@ while (userInput.ToLower() != "exit")
     }
 
     Console.WriteLine("\nPress 1 to add a product");
-    Console.WriteLine("Press 2 to Get your dog leash by name.");
-    Console.WriteLine("Press 3 to Get your cat food by name.");
+
+    if (productLogic.hasLeash())
+    {
+        Console.WriteLine("Press 2 to Get your dog leash by name.");
+    }
+    if (productLogic.hasFood())
+    {
+        Console.WriteLine("Press 3 to Get your cat food by name.");
+    }
+
+
     Console.WriteLine("Type 'exit' to quit");
     userInput = Console.ReadLine();
 
