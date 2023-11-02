@@ -83,7 +83,15 @@ while (userInput.ToLower() != "exit")
     else if (int.Parse(userInput) == 2)
     {
         Console.WriteLine("What Dog Leash would you like to view?");
-        Console.WriteLine(productLogic.GetDogLeashByName(Console.ReadLine()));
+        try
+        {
+            Console.WriteLine(productLogic.GetDogLeashByName(Console.ReadLine()));
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("That product does not exist.");
+
+        }
     }
 
     else if (int.Parse(userInput) == 3)
@@ -99,6 +107,10 @@ while (userInput.ToLower() != "exit")
 
         }
 
+    }
+    else if (int.Parse(userInput) == 4)
+    {
+        productLogic.GetAllProducts();
     }
 
     else if (userInput.ToLower() == "exit")
@@ -121,6 +133,10 @@ while (userInput.ToLower() != "exit")
     if (productLogic.hasFood())
     {
         Console.WriteLine("Press 3 to Get your cat food by name.");
+    }
+    if (productLogic.hasFood() || productLogic.hasLeash())
+    {
+        Console.WriteLine("Press 4 to Get a list of all products.");
     }
 
 

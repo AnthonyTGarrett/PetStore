@@ -24,6 +24,7 @@
             {
                 _catfood.Add(product.Name, product as Catfood);
             }
+            _products.Add(product);
 
         }
 
@@ -37,9 +38,13 @@
             return _catfood[name];
         }
 
-        public List<Product> GetAllProducts()
+        public void GetAllProducts()
         {
-            return _products;
+            foreach (var item in _products)
+            {
+                Console.WriteLine(item.ToString());
+            }
+
         }
 
         public bool hasLeash()
