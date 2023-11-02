@@ -12,7 +12,7 @@
             _dogLeash = new Dictionary<string, DogLeash>();
             _catfood = new Dictionary<string, Catfood>();
         }
-
+        // Adding the product to the individual dictionaries and the overall List
         public void AddProduct(Product product)
         {
             if (product is DogLeash)
@@ -28,16 +28,19 @@
 
         }
 
+        // Retrieve the dog leash properties from the dictionary
         public DogLeash GetDogLeashByName(string name)
         {
             return _dogLeash[name];
         }
 
+        // Retrieve the cat food properties from the dictionary
         public Catfood GetCatFoodByName(string name)
         {
             return _catfood[name];
         }
 
+        // Retrieve all of the products from the Lists
         public void GetAllProducts()
         {
             foreach (var item in _products)

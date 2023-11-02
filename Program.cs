@@ -4,6 +4,7 @@ using PetStore;
 
 var productLogic = new ProductLogic();
 Console.WriteLine("Welcome to Tony's pet supplies!");
+Console.WriteLine("-------------------------------");
 Console.WriteLine("Press 1 to add a product");
 Console.WriteLine("Type 'exit' to quit");
 string userInput = Console.ReadLine();
@@ -138,7 +139,6 @@ while (userInput.ToLower() != "exit")
     {
         Console.WriteLine("Press 4 to Get a list of all products.");
     }
-
 
     Console.WriteLine("Type 'exit' to quit");
     userInput = Console.ReadLine();

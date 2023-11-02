@@ -12,6 +12,13 @@
 
         }
 
+        public Catfood(string name, decimal price, int quantity, string description, double weightPounds, bool kittenFood) : base(name, price, quantity, description)
+        {
+            WeightPounds = weightPounds;
+            KittenFood = kittenFood;
+
+        }
+
         public override string ToString()
         {
             return base.ToString() + $"\nAmount: {WeightPounds}\nKitten Food?: {KittenFood}\n";
