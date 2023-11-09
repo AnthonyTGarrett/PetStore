@@ -47,9 +47,8 @@ while (userInput.ToLower() != "exit")
         if (userProduct.ToLower() == "cat food")
         {
 
-
             var catfood = new CatFood();
-            
+
             Console.WriteLine("\nWhat brand of Cat Food(name)? ");
             catfood.Name = Console.ReadLine();
 
@@ -86,7 +85,7 @@ while (userInput.ToLower() != "exit")
 
         var dogLeash = productLogic.GetDogLeashByName(Console.ReadLine());
 
-        if(dogLeash == null)
+        if (dogLeash == null)
         {
             Console.WriteLine("That product does not exist.");
         }
