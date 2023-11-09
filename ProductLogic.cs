@@ -4,13 +4,13 @@
     {
         private List<Product> _products { get; set; }
         Dictionary<string, DogLeash> _dogLeash { get; set; }
-        Dictionary<string, Catfood> _catfood { get; set; }
+        Dictionary<string, CatFood> _catfood { get; set; }
 
         public ProductLogic()
         {
             _products = new List<Product>();
             _dogLeash = new Dictionary<string, DogLeash>();
-            _catfood = new Dictionary<string, Catfood>();
+            _catfood = new Dictionary<string, CatFood>();
         }
         // Adding the product to the individual dictionaries and the overall List
         public void AddProduct(Product product)
@@ -20,9 +20,9 @@
                 _dogLeash.Add(product.Name, product as DogLeash);
             }
 
-            if (product is Catfood)
+            if (product is CatFood)
             {
-                _catfood.Add(product.Name, product as Catfood);
+                _catfood.Add(product.Name, product as CatFood);
             }
             _products.Add(product);
 
@@ -42,7 +42,7 @@
         }
 
         // Retrieve the cat food properties from the dictionary
-        public Catfood GetCatFoodByName(string name)
+        public CatFood GetCatFoodByName(string name)
         {
             try
             {

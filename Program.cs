@@ -46,7 +46,17 @@ while (userInput.ToLower() != "exit")
 
         if (userProduct.ToLower() == "cat food")
         {
-            Catfood catfood = new Catfood();
+            Console.WriteLine("Do you want dry cat food? ");
+
+            if(Console.ReadLine().ToLower() == "y" || Console.ReadLine().ToLower() == "yes")
+            {
+                DryCatFood catfood = new DryCatFood(0);
+            }
+            else
+            {
+                CatFood catfood = new CatFood();
+            }
+            
 
             Console.WriteLine("\nWhat brand of Cat Food(name)? ");
             catfood.Name = Console.ReadLine();
@@ -59,9 +69,6 @@ while (userInput.ToLower() != "exit")
 
             Console.WriteLine("\nDescribe the Cat Food: ");
             catfood.Description = Console.ReadLine();
-
-            Console.WriteLine("\nHow many pounds of cat food do you need? ");
-            catfood.WeightPounds = int.Parse(Console.ReadLine());
 
             Console.WriteLine("\nIs the food for a kitten(yes/no)? ");
             if (Console.ReadLine().ToLower() == "yes")
