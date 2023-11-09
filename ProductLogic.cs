@@ -31,13 +31,27 @@
         // Retrieve the dog leash properties from the dictionary
         public DogLeash GetDogLeashByName(string name)
         {
-            return _dogLeash[name];
+            try
+            {
+                return _dogLeash[name];
+            }
+            catch(Exception ex)
+            {
+                return null;
+            }
         }
 
         // Retrieve the cat food properties from the dictionary
         public Catfood GetCatFoodByName(string name)
         {
-            return _catfood[name];
+            try
+            {
+                return _catfood[name];
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
         }
 
         // Retrieve all of the products from the Lists

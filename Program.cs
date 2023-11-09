@@ -84,15 +84,20 @@ while (userInput.ToLower() != "exit")
     else if (int.Parse(userInput) == 2)
     {
         Console.WriteLine("What Dog Leash would you like to view?");
-        try
-        {
-            Console.WriteLine(productLogic.GetDogLeashByName(Console.ReadLine()));
-        }
-        catch (Exception ex)
+
+        var dogLeash = productLogic.GetDogLeashByName(Console.ReadLine());
+
+        if(dogLeash == null)
         {
             Console.WriteLine("That product does not exist.");
-
         }
+        else
+        {
+            Console.WriteLine(dogLeash);
+        }
+
+
+
     }
 
     else if (int.Parse(userInput) == 3)
