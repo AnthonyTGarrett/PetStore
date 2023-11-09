@@ -103,14 +103,15 @@ while (userInput.ToLower() != "exit")
     else if (int.Parse(userInput) == 3)
     {
         Console.WriteLine("What Cat Food would you like to view?");
-        try
-        {
-            Console.WriteLine(productLogic.GetCatFoodByName(Console.ReadLine()));
-        }
-        catch (Exception ex)
+
+        var catfood = productLogic.GetCatFoodByName(Console.ReadLine());
+        if (catfood == null)
         {
             Console.WriteLine("That product does not exist.");
-
+        }
+        else
+        {
+            Console.WriteLine(catfood);
         }
 
     }
