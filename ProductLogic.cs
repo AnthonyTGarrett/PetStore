@@ -66,7 +66,7 @@
 
         public bool hasLeash()
         {
-            return _dogLeash.Count == 0 ? false : true;
+            return _dogLeash.Count != 0;
         }
 
         public bool hasLeash(string name)
@@ -81,7 +81,7 @@
 
         public bool hasFood()
         {
-            return _catfood.Count == 0 ? false : true;
+            return _catfood.Count != 0;
         }
 
     }
