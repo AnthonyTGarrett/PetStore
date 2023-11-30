@@ -1,6 +1,6 @@
 ﻿namespace PetStore
 {
-    class ProductLogic
+    class ProductLogic : IProductLogic
     {
         private List<Product> _products { get; set; }
         Dictionary<string, DogLeash> _dogLeash { get; set; }
@@ -11,6 +11,15 @@
             _products = new List<Product>();
             _dogLeash = new Dictionary<string, DogLeash>();
             _catfood = new Dictionary<string, CatFood>();
+
+            Product product1 = new DogLeash("Kobe Leash", 12.99m, 1, "Very Nice Leash", 30, "Leather");
+            Product product2 = new DogLeash("Spammy Leash", 13.99m, 0, "Terrible Leash", 24, "Fake Leather");
+            Product product3 = new CatFood("Spicy meals", 8.99m, 3, "Very spicy food", false);
+
+
+            _products.Add(product1);
+            _products.Add(product2);
+            _products.Add(product3);
         }
         // Adding the product to the individual dictionaries and the overall List
         public void AddProduct(Product product)
@@ -84,5 +93,9 @@
             return _catfood.Count != 0;
         }
 
+        public List<String> GetOnlyInStockProducts()
+        {
+            return _products.Where(x => x.Quantity > 0).Select(x => x.Name).ToList();
+        }
     }
 }

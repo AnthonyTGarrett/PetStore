@@ -117,6 +117,10 @@ while (userInput.ToLower() != "exit")
     {
         productLogic.GetAllProducts();
     }
+    else if (int.Parse(userInput) == 5)
+    {
+        productLogic.GetOnlyInStockProducts();
+    }
 
     else if (userInput.ToLower() == "exit")
     {
