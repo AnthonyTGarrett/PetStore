@@ -5,7 +5,8 @@ using PetStore;
 var productLogic = new ProductLogic();
 Console.WriteLine("Welcome to Tony's pet supplies!");
 Console.WriteLine("-------------------------------");
-Console.WriteLine("Press 1 to add a product");
+Console.WriteLine("Press 1 to add a Dog leash");
+Console.WriteLine("Press 2 to add Cat Food");
 Console.WriteLine("Type 'exit' to quit");
 string userInput = Console.ReadLine();
 
@@ -14,72 +15,131 @@ while (userInput.ToLower() != "exit")
 {
     if (int.Parse(userInput) == 1)
     {
-        Console.WriteLine("\nWhat product would you like to add('dog leash' or 'cat food')? ");
-        string userProduct = Console.ReadLine();
+        var dogLeash = new DogLeash();
 
-        if (userProduct.ToLower() == "dog leash")
+        Console.Write("\nWhat brand of Dog Leash(name)? ");
+        dogLeash.Name = Console.ReadLine();
+
+        Console.Write("\nWhat was the price of the dog leash ");
+        dogLeash.Price = Decimal.Parse(Console.ReadLine());
+
+        Console.Write("\nHow many do you need? ");
+        dogLeash.Quantity = int.Parse(Console.ReadLine());
+
+        Console.Write("\nDescribe the Leash: ");
+        dogLeash.Description = Console.ReadLine();
+
+        Console.Write("\nHow long of a leash do you need? ");
+        dogLeash.LengthInches = int.Parse(Console.ReadLine());
+
+        Console.Write("\nWhat material should the leash be made of? ");
+        dogLeash.Material = Console.ReadLine();
+
+        productLogic.AddProduct(dogLeash);
+        Console.WriteLine("Your dog leash was added to the list.");
+
+
+    }
+
+    if(int.Parse(userInput) == 2)
+    {
+        var catfood = new CatFood();
+
+        Console.Write("\nWhat brand of Cat Food(name)? ");
+        catfood.Name = Console.ReadLine();
+
+        Console.Write("\nWhat was the price of the cat food ");
+        catfood.Price = Decimal.Parse(Console.ReadLine());
+
+        Console.Write("\nHow many do you need? ");
+        catfood.Quantity = int.Parse(Console.ReadLine());
+
+        Console.Write("\nDescribe the Cat Food: ");
+        catfood.Description = Console.ReadLine();
+
+        Console.Write("\nIs the food for a kitten(yes/no)? ");
+        if (Console.ReadLine().ToLower() == "yes")
         {
-            var dogLeash = new DogLeash();
+            catfood.KittenFood = true;
 
-            Console.WriteLine("\nWhat brand of Dog Leash(name)? ");
-            dogLeash.Name = Console.ReadLine();
-
-            Console.WriteLine("\nWhat was the price of the dog leash ");
-            dogLeash.Price = Decimal.Parse(Console.ReadLine());
-
-            Console.WriteLine("\nHow many do you need? ");
-            dogLeash.Quantity = int.Parse(Console.ReadLine());
-
-            Console.WriteLine("\nDescribe the Leash: ");
-            dogLeash.Description = Console.ReadLine();
-
-            Console.WriteLine("\nHow long of a leash do you need? ");
-            dogLeash.LengthInches = int.Parse(Console.ReadLine());
-
-            Console.WriteLine("\nWhat material should the leash be made of? ");
-            dogLeash.Material = Console.ReadLine();
-
-            productLogic.AddProduct(dogLeash);
-            Console.WriteLine("Your product was added to the list.");
+            productLogic.AddProduct(catfood);
+            Console.WriteLine("Your kitten food was added to the list.");
 
         }
-
-        if (userProduct.ToLower() == "cat food")
+        else
         {
+            catfood.KittenFood = false;
 
-            var catfood = new CatFood();
-
-            Console.WriteLine("\nWhat brand of Cat Food(name)? ");
-            catfood.Name = Console.ReadLine();
-
-            Console.WriteLine("\nWhat was the price of the cat food ");
-            catfood.Price = Decimal.Parse(Console.ReadLine());
-
-            Console.WriteLine("\nHow many do you need? ");
-            catfood.Quantity = int.Parse(Console.ReadLine());
-
-            Console.WriteLine("\nDescribe the Cat Food: ");
-            catfood.Description = Console.ReadLine();
-
-            Console.WriteLine("\nIs the food for a kitten(yes/no)? ");
-            if (Console.ReadLine().ToLower() == "yes")
-            {
-                catfood.KittenFood = true;
-
-                productLogic.AddProduct(catfood);
-                Console.WriteLine("Your product was added to the list.");
-
-            }
-            else
-            {
-                catfood.KittenFood = false;
-
-                productLogic.AddProduct(catfood);
-                Console.WriteLine("Your product was added to the list.");
-            }
+            productLogic.AddProduct(catfood);
+            Console.WriteLine("Your cat food was added to the list.");
         }
     }
-    else if (int.Parse(userInput) == 2)
+    //    Console.WriteLine("\nWhat product would you like to add('dog leash' or 'cat food')? ");
+    //    string userProduct = Console.ReadLine();
+
+    //    if (userProduct.ToLower() == "dog leash")
+    //    {
+    //        var dogLeash = new DogLeash();
+
+    //        Console.WriteLine("\nWhat brand of Dog Leash(name)? ");
+    //        dogLeash.Name = Console.ReadLine();
+
+    //        Console.WriteLine("\nWhat was the price of the dog leash ");
+    //        dogLeash.Price = Decimal.Parse(Console.ReadLine());
+
+    //        Console.WriteLine("\nHow many do you need? ");
+    //        dogLeash.Quantity = int.Parse(Console.ReadLine());
+
+    //        Console.WriteLine("\nDescribe the Leash: ");
+    //        dogLeash.Description = Console.ReadLine();
+
+    //        Console.WriteLine("\nHow long of a leash do you need? ");
+    //        dogLeash.LengthInches = int.Parse(Console.ReadLine());
+
+    //        Console.WriteLine("\nWhat material should the leash be made of? ");
+    //        dogLeash.Material = Console.ReadLine();
+
+    //        productLogic.AddProduct(dogLeash);
+    //        Console.WriteLine("Your product was added to the list.");
+
+    //    }
+
+    //    if (userProduct.ToLower() == "cat food")
+    //    {
+
+    //        var catfood = new CatFood();
+
+    //        Console.WriteLine("\nWhat brand of Cat Food(name)? ");
+    //        catfood.Name = Console.ReadLine();
+
+    //        Console.WriteLine("\nWhat was the price of the cat food ");
+    //        catfood.Price = Decimal.Parse(Console.ReadLine());
+
+    //        Console.WriteLine("\nHow many do you need? ");
+    //        catfood.Quantity = int.Parse(Console.ReadLine());
+
+    //        Console.WriteLine("\nDescribe the Cat Food: ");
+    //        catfood.Description = Console.ReadLine();
+
+    //        Console.WriteLine("\nIs the food for a kitten(yes/no)? ");
+    //        if (Console.ReadLine().ToLower() == "yes")
+    //        {
+    //            catfood.KittenFood = true;
+
+    //            productLogic.AddProduct(catfood);
+    //            Console.WriteLine("Your product was added to the list.");
+
+    //        }
+    //        else
+    //        {
+    //            catfood.KittenFood = false;
+
+    //            productLogic.AddProduct(catfood);
+    //            Console.WriteLine("Your product was added to the list.");
+    //        }
+    //    }
+
+    else if (int.Parse(userInput) == 8)
     {
         Console.WriteLine("What Dog Leash would you like to view?");
 
@@ -98,7 +158,7 @@ while (userInput.ToLower() != "exit")
 
     }
 
-    else if (int.Parse(userInput) == 3)
+    else if (int.Parse(userInput) == 9)
     {
         Console.WriteLine("What Cat Food would you like to view?");
 
