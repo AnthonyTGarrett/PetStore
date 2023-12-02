@@ -12,9 +12,28 @@
             _dogLeash = new Dictionary<string, DogLeash>();
             _catfood = new Dictionary<string, CatFood>();
 
-            Product product1 = new DogLeash("Kobe Leash", 12.99m, 1, "Very Nice Leash", 30, "Leather");
-            Product product2 = new DogLeash("Spammy Leash", 13.99m, 0, "Terrible Leash", 24, "Fake Leather");
-            Product product3 = new CatFood("Spicy meals", 8.99m, 3, "Very spicy food", false);
+            var product1 = new DogLeash();
+            product1.Name = "Kobe Leash";
+            product1.Price = 12.99m;
+            product1.Quantity = 1;
+            product1.Description = "Very Nice Leash";
+            product1.LengthInches = 30;
+            product1.Material = "Leather";
+
+            var product2 = new DogLeash();
+            product2.Name = "Spammy Leash";
+            product2.Price = 13.99m;
+            product2.Quantity = 0;
+            product2.Description = "Terrible Leash";
+            product2.LengthInches = 24;
+            product2.Material = "Fake Leather";
+
+            var product3 = new CatFood();
+            product3.Name = "Spicy meals";
+            product3.Price = 8.99m;
+            product3.Quantity = 3;
+            product3.Description = "Very spicy food";
+            product3.KittenFood = false;
 
 
             _products.Add(product1);

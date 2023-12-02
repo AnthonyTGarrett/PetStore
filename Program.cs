@@ -94,8 +94,6 @@ while (userInput.ToLower() != "exit")
             Console.WriteLine(dogLeash);
         }
 
-
-
     }
 
     else if (int.Parse(userInput) == 4)
