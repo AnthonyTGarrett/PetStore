@@ -83,33 +83,14 @@
         }
 
         // Retrieve all of the products from the Lists
-        public void GetAllProducts()
+        public List<Product> GetAllProducts()
         {
             foreach (var item in _products)
             {
                 Console.WriteLine(item.ToString());
             }
 
-        }
-
-        public bool hasLeash()
-        {
-            return _dogLeash.Count != 0;
-        }
-
-        public bool hasLeash(string name)
-        {
-            return _dogLeash.ContainsKey(name);
-        }
-
-        public bool hasFood(string name)
-        {
-            return _catfood.ContainsKey(name);
-        }
-
-        public bool hasFood()
-        {
-            return _catfood.Count != 0;
+            return _products;
         }
 
         public List<String> GetOnlyInStockProducts()
