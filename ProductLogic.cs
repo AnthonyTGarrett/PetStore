@@ -63,7 +63,7 @@
             {
                 return _dogLeash[name];
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return null;
             }
@@ -97,5 +97,23 @@
         {
             return _products.Where(x => x.Quantity > 0).Select(x => x.Name).ToList();
         }
+
+        public bool hasLeash()
+        {
+            return _dogLeash.Count != 0;
+        }
+
+        public bool GetLeash(String name)
+        {
+            return _dogLeash.ContainsKey(name);
+        }
+
+        public bool hasFood()
+        {
+            return _catfood.Count != 0;
+        }
+
+
+
     }
 }
