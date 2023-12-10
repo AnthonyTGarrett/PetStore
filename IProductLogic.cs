@@ -12,6 +12,8 @@ namespace PetStore
         public DogLeash GetDogLeashByName(string name);
         public CatFood GetCatFoodByName(string name);
         public List<Product> GetAllProducts();
-        public List<String> GetOnlyInStockProducts();
+        public List<Product> GetOnlyInStockProducts();
+
+        public Decimal GetTotalPriceOfInventory();
     }
 }

@@ -93,9 +93,9 @@
             return _products;
         }
 
-        public List<String> GetOnlyInStockProducts()
+        public List<Product> GetOnlyInStockProducts()
         {
-            return _products.Where(x => x.Quantity > 0).Select(x => x.Name).ToList();
+            return _products.InStock();
         }
 
         public bool hasLeash()
@@ -113,7 +113,9 @@
             return _catfood.Count != 0;
         }
 
-
-
+        public decimal GetTotalPriceOfInventory()
+        {
+            return _products.InStock().Select(x => x.Price).Sum();
+        }
     }
 }

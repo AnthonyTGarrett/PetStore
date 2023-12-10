@@ -117,7 +117,17 @@ while (userInput.ToLower() != "exit")
     }
     else if (int.Parse(userInput) == 6)
     {
-        productLogic.GetOnlyInStockProducts();
+        var products = productLogic.GetOnlyInStockProducts();
+        foreach(var product in products)
+        {
+            Console.WriteLine(product);
+        }
+        Console.WriteLine();
+    }
+    else if (int.Parse(userInput) == 7)
+    {
+        Console.WriteLine($"Total in stock value: {productLogic.GetTotalPriceOfInventory()}");
+        Console.WriteLine();
     }
 
     else if (userInput.ToLower() == "exit")
@@ -146,6 +156,7 @@ while (userInput.ToLower() != "exit")
     {
         Console.WriteLine("Press 5 to Get a list of all products.");
         Console.WriteLine("Press 6 to list all in stock products.");
+        Console.WriteLine("Press 7 to list the total stock prices.");
     }
 
     Console.WriteLine("Type 'exit' to quit");
